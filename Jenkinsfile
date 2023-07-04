@@ -3,7 +3,7 @@ pipeline {
 		stages{
 			stage('1-make a left'){
 				steps{
-				sh  'echo "walk.."'
+				checkout scmGit(branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[credentialsId: 'github-creds', url: 'https://github.com/rnfor-pro/team6-jenkins.git']])
 				}
 			}
 			stage('2-make a right'){
